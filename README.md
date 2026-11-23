@@ -48,3 +48,9 @@ python3 simulator/serve.py --open
 ```
 
 The Python server listens on 127.0.0.1. It compiles source on the laptop, and the browser runs the resulting module in a dedicated worker. The display rasterizer is Adafruit GFX, distributed under its included BSD license in simulator/vendor/gfx/license.txt.
+
+## Public web editor
+
+The static site in `docs/` compiles edits on the visitor’s device using Clang and LLD in a dedicated worker. The initial Hello World example loads from a precompiled module; changing the editor text invokes the C++ compiler. The first edited run fetches approximately 19 MB of compressed compiler assets. Sketches using delays additionally load Binaryen to suspend and resume the running program. Stop terminates a build or a running sketch.
+
+After changing the simulator headers, graphics library or default sketch, run `node simulator/build_pages_support.cjs` to refresh the support objects and default WebAssembly. Serve `docs/` via a static HTTP server to preview it. Upstream versions and licenses are recorded in `docs/compiler/NOTICE.txt`.
