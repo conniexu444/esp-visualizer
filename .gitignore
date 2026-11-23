@@ -1,0 +1,17 @@
+.sim-tools/
+.sim-cache/
+__pycache__/
+.DS_Store
+
+/Roundbench Device.app/
+
+# Local artifacts, credentials, and device output
+.env
+.env.*
+*.pem
+*.key
+*.log
+*.bin
+*.bin.gz
+*.elf
+*.app/

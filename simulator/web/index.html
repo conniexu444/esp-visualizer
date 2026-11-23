@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f6f5"><title>Roundbench · ESP32 sketch workbench</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><div class="brand"><span class="mark" aria-hidden="true">◉</span> Roundbench</div><span class="local"><i></i> Local workspace</span></header>
+<main>
+<div class="heading"><div><h1>Sketch workbench</h1><p>Waveshare ESP32-S3-Touch-LCD-1.28</p></div><div class="actions"><label class="button" for="file">Open sketch</label><input id="file" class="sr" type="file" accept=".ino,.cpp,.cxx"><button id="run" class="primary"><span aria-hidden="true">▶</span> Run sketch</button></div></div>
+<div class="workspace">
+<section class="preview panel"><div class="bar"><h2>Display preview</h2><span id="status" role="status">Ready</span></div>
+<div class="stage"><div class="device"><canvas id="lcd" width="240" height="240" aria-label="Virtual round touchscreen. Click or drag to send touch."></canvas></div></div>
+<div class="sensor"><span>Touch position</span><output id="position">X — &nbsp; Y —</output></div><p class="hint">Click or drag on the display to send touch input.</p>
+</section>
+<section class="editor panel"><div class="bar"><h2>Sketch editor</h2><button id="save" class="text">Save .ino</button></div><div class="filename"><span aria-hidden="true">{ }</span> <strong id="name">TouchDial.ino</strong><span id="revision"></span></div>
+<div id="codebox"><pre id="lines" aria-hidden="true"></pre><div class="source"><pre id="highlight" aria-hidden="true"></pre><textarea id="source" wrap="off" aria-label="Arduino C++ sketch source" spellcheck="false" autocorrect="off" autocapitalize="off"></textarea></div></div>
+<div class="editorfoot"><span>Arduino C++</span><button id="demo" class="text">Load touch demo</button></div></section>
+</div>
+<section class="console panel"><div class="bar"><h2>Serial monitor</h2><div class="actions"><button id="stop" class="text" disabled>Stop sketch</button><button id="clear" class="text">Clear</button></div></div><pre id="log" role="log" aria-label="Sketch output"></pre></section>
+<details><summary>Supported sketch features</summary><p>Open a single Arduino .ino or C++ file. The preview supports common TFT_eSPI shapes, RGB565 colors, rotation, classic bitmap text, Serial output, millis(), delay(), and CST816S touch position via Wire (registers 0x02–0x06). Declare helper functions before you call them.</p><p>Use the physical board to verify electrical behavior, sensor readings, radio, and timing. LVGL, MicroPython, custom drivers and additional libraries need their own runtime. The included sketch uses the board-specific TFT_eSPI configuration when built for hardware.</p></details>
+</main><script src="/app.js"></script></body></html>
