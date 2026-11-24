@@ -1,5 +1,25 @@
 # Roundbench
 
+## Flash a sketch to the Waveshare ESP32-S3-Touch-LCD-1.28
+
+### One-time Arduino IDE setup
+
+1. Open **Boards Manager** in Arduino IDE. Search for **esp32 by Espressif Systems**, select **2.0.12**, and click **Install**. This version worked on the physical round display. The same display sketch uploaded with 3.3.12 but left the screen dark. [Waveshare Arduino setup guide](https://docs.waveshare.com/ESP32-S3-Touch-LCD-1.28/Arduino)
+2. Download and unzip the board's example package. Inside `Arduino/libraries/`, copy both **`TFT_eSPI` (2.5.34)** and **`TFT_eSPI_Setups`** into your Arduino sketchbook's `libraries` folder. The second folder contains the driver and pin settings for this board. [Download the Waveshare example ZIP](https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.28/ESP32-S3-Touch-LCD-1.28-Demo.zip)
+3. Reopen Arduino IDE. On a Mac using the default sketchbook location, the two files should appear at these paths.
+
+   ```text
+   ~/Documents/Arduino/libraries/TFT_eSPI/TFT_eSPI.h
+   ~/Documents/Arduino/libraries/TFT_eSPI_Setups/Setup207_GC9A01.h
+   ```
+
+### Upload and check the touch example
+
+1. In Arduino IDE, open [HelloColors.ino](examples/HelloColors/HelloColors.ino). This is the sketch Arduino compiles for the device. The ESP32 board package supplies the `Wire` library used to read taps.
+2. Connect the board with a USB data cable. Under **Select Board → Select other board and port…**, choose **ESP32S3 Dev Module** and the port that appears when you plug in the board.
+3. Click **✓ Verify** to compile. When you're ready to replace the program on the board, click **→ Upload**. After the upload is verified, the board restarts and displays “Hello, world!”.
+4. Open **Tools → Serial Monitor**, select **115200 baud**, and tap the screen. The first tap turns the background navy and prints `Tap 1 - background changed to navy`.
+
 ## Mac device emulator
 
 The round panel displays the guest framebuffer. Use **Scale** to change its size, the command panel to run your program, and the inspector underneath to edit sketches or read UART0.
